@@ -3,7 +3,45 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00_总记", "00_总记\00_总记.vcxproj", "{BD0298E3-4BD8-437A-ACC4-8175A1F71779}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_避免容器里对象的拷贝_指针拷贝没有分割", "03_避免容器里对象的拷贝_指针拷贝没有分割\03_避免容器里对象的拷贝_指针拷贝没有分割.vcxproj", "{2A420C85-C951-4401-B929-45FD326CAA57}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_区间成员函数代替单元素操作", "05_区间成员函数代替单元素操作\05_区间成员函数代替单元素操作.vcxproj", "{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Debug|x64.ActiveCfg = Debug|x64
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Debug|x64.Build.0 = Debug|x64
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Debug|x86.ActiveCfg = Debug|Win32
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Debug|x86.Build.0 = Debug|Win32
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Release|x64.ActiveCfg = Release|x64
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Release|x64.Build.0 = Release|x64
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Release|x86.ActiveCfg = Release|Win32
+		{BD0298E3-4BD8-437A-ACC4-8175A1F71779}.Release|x86.Build.0 = Release|Win32
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Debug|x64.ActiveCfg = Debug|x64
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Debug|x64.Build.0 = Debug|x64
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Debug|x86.Build.0 = Debug|Win32
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Release|x64.ActiveCfg = Release|x64
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Release|x64.Build.0 = Release|x64
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Release|x86.ActiveCfg = Release|Win32
+		{2A420C85-C951-4401-B929-45FD326CAA57}.Release|x86.Build.0 = Release|Win32
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Debug|x64.ActiveCfg = Debug|x64
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Debug|x64.Build.0 = Debug|x64
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Debug|x86.Build.0 = Debug|Win32
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Release|x64.ActiveCfg = Release|x64
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Release|x64.Build.0 = Release|x64
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Release|x86.ActiveCfg = Release|Win32
+		{FE2C3C60-DDDC-4074-BBB1-AEEBD748C97B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
