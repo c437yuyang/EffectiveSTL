@@ -20,7 +20,7 @@ int main()
 	vec1.insert(vec1.end(), vec2.begin() + vec2.size() / 2, vec2.end());
 	//3.copy(效率低，内部存在循环)
 	vec1.clear();
-	copy(vec2.begin() + vec2.size() / 2, vec2.end(), back_inserter(vec1));
+	copy(vec2.begin() + vec2.size() / 2, vec2.end(), back_inserter(vec1)); //back_inserter创建一个vec1的插入迭代器，防止vec1本身没有分配内存，本质就是调用push_back
 	//4.手动单成员赋值
 	vec1.clear();
 	for (auto it=vec2.begin()+vec2.size()/2;it!=vec2.end();++it)
