@@ -38,7 +38,8 @@ void doSomething()
 	}
 
 	//for_each(v1.begin(), v1.end(), DeleteObject<string>());
-	for_each(v1.begin(), v1.end(), DeleteObject()); //版本2
+	//for_each(v1.begin(), v1.end(), DeleteObject()); //版本2
+	for_each(v1.begin(), v1.end(), [](string *p) {delete p; }); //版本3 lambda表达式
 }
 
 
