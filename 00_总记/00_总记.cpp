@@ -6,7 +6,7 @@
 
 int main()
 {
-    return 0;
+	return 0;
 }
 
 //M2:小心对"容器无关代码"的幻想
@@ -107,3 +107,33 @@ int main()
 // 1.不能直接const_cast,本质上const_iterator和iterator是两个完全不同的类型，不是只加了const修饰符
 // 2.但是vector和string内部就是typedef const T* vector<T>::iterator,所以可以直接转型，亲测VS不行
 // 3.转型办法参加26_01
+
+//M28:通过reverse_iterator转换成Iterator
+// 1.reverse_iterator的insert可以直接.base来实现
+// 2.reverse_iterator.base()，返回指向其(正序)前一个元素的iterator
+// 3.插入操作就是将新元素插入到指定迭代器位置，然后将原先的迭代器指向的元素移到遍历过程的下一个(这里下一个是看正序还是反序而定的)
+
+//M30:确保容器的容量足够大小
+// 1.back_inserter等inserter的使用可以确保不会出现未定义的操作，参见30_01
+// 2.连续容器如vector在调用之前，
+// 最好先reverse（reverse只是容量变大，但是size没变，所以还是必须inserter，而不能直接更改那个位置），但是还是得忍受移动的代价
+// 3.任何时候，容器需要增加大小的时候，一定要用inserter
+
+ //M31:选择合适的sort
+// 1.vector,deque,string,数组为第一类，list第二类
+// 2.对于第一类，完全排序用sort或者stable_sort,只排序前N个用partial_sort,不关心前N个顺序
+// 用nth_element,只需要按条件分为两部分但并不排序，用Partition或者stable_partition
+// 3.list中sort可代替stable_sort
+// 4.性能: partion>stable_partition>nth_element>partial_sort>sort>stable_sort
+
+//M32:std:remove一定要和成员的erase联合使用
+// 1.std::remove并不删除元素，只是将不删除的元素移到开始，返回第一个需要删除的元素的iterator，因此要接erase
+// 2.list.remove是整合了erase的，可以直接用
+// 3.类似的还有remove_if和unique
+
+//M33:避免在装有指针的容器使用remove类似的算法
+// 1.remove会向前移动元素，就会有覆盖，覆盖了指针的话，就会内存泄露
+// 2.解决方法是，先用一个for_each，delete掉相应的内存，或者使用Partition
+// 3.如果用的是智能指针的话，就可以直接remove_erase了
+
+//M35:copy_if在VS里面已经实现了

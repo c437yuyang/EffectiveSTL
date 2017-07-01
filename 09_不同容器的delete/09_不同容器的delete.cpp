@@ -14,11 +14,13 @@ int main()
 {
 	//1.vector,string,deque
 	vector<int> v1 = { 7 ,1, 9, 2, 0, 7, 7, 3, 4, 6, 8, 5, 7, 7 };
-	auto new_end =remove(v1.begin(), v1.end(), 1); //remove 删除指定的元素，但是会向前移位,最后的不受影响，返回指向不受影响的第一个(多余的第一个，因此在erase)
-	//after remove:1 9 2 0 3 4 6 8 5 6 8 5 7 7
+	auto new_end =remove(v1.begin(), v1.end(), 7); //remove 删除指定的元素，但是会向前移位,最后的不受影响，返回指向不受影响的第一个(多余的第一个，因此在erase)
+	//after remove: 1, 9, 2, 0, 3, 4, 6, 8, 5 ，6,8,5，7, 7（把所有满足条件的，等于7的删除，不是真删除，把不是7的向前移动，返回第一个需要erase的iterator，这里就是6）
 	v1.erase(new_end,v1.end());
 	//after erase:1 9 2 0 3 4 6 8 5
 	
+	//remove移动所有不删除的元素到容器的开头，返回指向第一个需要erase的元素
+
 	//简写为:
 	//v1.erase(remove(v1.begin(), v1.end(), 1), v1.end());
 
