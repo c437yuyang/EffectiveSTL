@@ -137,3 +137,23 @@ int main()
 // 3.如果用的是智能指针的话，就可以直接remove_erase了
 
 //M35:copy_if在VS里面已经实现了
+
+
+
+//M43：尽量用算法代替手写循环
+// 1.效率(开发算法的人几乎总是比你更能写出高效率的算法)，代码清晰度
+// 2.
+
+//M44:尽量用成员函数替代同名的std::algorithm
+// 1.成员函数版本更快
+// 2.与容器结合的更好
+// 3.判断元素相同，使用的是等价而不是相等。
+// 4.list的成员函数的行为和std::版本通常都不一样
+
+//M45:find,count,binary_search,lower_bound,upper_bound,equal_range的区别
+// 1.无序区间用find和count，有序用剩下的
+// 2.find和count都可以用来检测存在与否，但是find()找到第一个就停了，因此效率更好。
+// 3.find()返回迭代器可以继续操作，count不能
+// 4.count和find是线性时间，而其他的是对数时间
+// 5.count和find用相等搜索，其他的用的等价
+// 6.binary_search返回bool,只检查是否存在，equal_range返回一个区间，为找到的元素的区间

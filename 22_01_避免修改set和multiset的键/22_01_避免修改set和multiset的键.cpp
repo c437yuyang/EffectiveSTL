@@ -33,7 +33,7 @@ struct Less_Equal
 //		return *ps1 < *ps2;
 //	}
 //};
-
+class BadPredict:public unary_function
 
 
 int main()
