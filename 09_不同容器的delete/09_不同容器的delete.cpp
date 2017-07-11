@@ -47,13 +47,9 @@ int main()
 	for (auto it = iSet1.begin(); it != iSet1.end();) 
 	{
 		if (*it == 3) 
-		{
 			iSet1.erase(it++); //删除后当前iterator就已经失效了，所以不能再去++，必须先拿到一个副本
-		}
 		else
-		{
 			++it;
-		}
 	}
 
 

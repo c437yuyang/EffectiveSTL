@@ -18,10 +18,10 @@ int f(double d) //实现1 和 3
 //
 //} 
 
-
 int g(double(*pf));
 int g(double pf());
 int g(double ()); //这三种声明等价，都是有一个返回double类型的函数指针的参数
+int g(double(*pf(int))); //里面也可以带参数
 
 int main()
 {

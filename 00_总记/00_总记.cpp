@@ -9,9 +9,14 @@ int main()
 	return 0;
 }
 
+//M1:仔细选择容器
+// 1.连续内存容器:vector,string,deque，插入删除操作会使迭代器失效
+// 2.基于结点的容器:list,插入删除不会使迭代器失效
+
 //M2:小心对"容器无关代码"的幻想
+// 不同容器是不同的，优点和缺点大不相同，不要去对它们做包装
 // 1.尽量用typedef来代替冗长的container<class> 以及container<class>::iterator代码
-// 2.如果不想对用户暴露所使用容器的类型，则把容器进行封装，把容器类型定义在private域
+// 2.如果不想对用户暴露所使用容器的类型，则把容器进行封装，把容器类型定义在private域，只提供相应的接口给用户
 
 
 //M3:使容器里对象的拷贝操作轻量而且正确
@@ -42,8 +47,14 @@ int main()
 //M9:不同类型容器的delete
 // 参看09
 
+
+//M13:尽量使用vector和string来代替动态数组
+// 1.new进行分配的话，要确保(1)有delete(2)delete是正确的形式(3)只delete一次(所以通常delete接把指针=null)
+//
+
 //M14:使用reverse来避免不必要的重新分配
 // 1.size,capacity,resize,reverse的含义
+// 虽然vector等可以自动把空间变大，但是每次这样都需要重新移动所有元素，代价其实挺大的
 // 2.当确定知道需要多大空间的时候，可以直接先reverse，避免不必要的分配，提高效率
 
 //M16:vector和string传递给传统的C API

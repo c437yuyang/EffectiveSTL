@@ -19,7 +19,8 @@ using namespace std;
 //};
 
 
-//版本2
+//版本2，这种类型演绎使我们放弃DeleteObject的适配能力，但是我们并不需要在这里
+//可以防止出现没有虚析构函数的时候的多态情况的错误删除
 struct DeleteObject
 {
 	template <typename T>
@@ -52,7 +53,8 @@ int main()
 	doSomething();
 	vector<auto_ptr<int>> v; //编译器禁止使用auto_ptr的容器,VS测试表明可以？
 	vector<unique_ptr<int>> v1;
-	vector<shared_ptr<int>> v2;
+	vector<shared_ptr<int>> v2; //其实doSomething不安全，因为其中任何一个指针可能已经被删除过了
+	//这时，最好的做法是用shared_ptr来代替
 
     return 0;
 }
