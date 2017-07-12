@@ -6,6 +6,12 @@
 #include <vector>
 using namespace std;
 
+template <class T> inline
+void shrinkVector(vector<T> &v)
+{
+	vector<T>(v).swap(v);
+}
+
 int main()
 {
 
@@ -22,7 +28,8 @@ int main()
 	ivec1.reserve(6);
 	cout << ivec1.capacity() << endl;//10  reverse不能调小
 
-	vector<int>(ivec1).swap(ivec1);  //通过这种建立一个临时对象的方法，拷贝一次元素，调整vector的容量
+	//vector<int>(ivec1).swap(ivec1);  //通过这种建立一个临时对象的方法，拷贝一次元素，调整vector的容量
+	shrinkVector(ivec1); //封装成一个方法
 
 	cout << ivec1.capacity() << endl;//6,此方法可以调整
 
@@ -30,6 +37,6 @@ int main()
 	//string也是类似的
 
 	system("pause");
-    return 0;
+	return 0;
 }
 

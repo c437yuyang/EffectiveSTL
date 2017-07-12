@@ -6,18 +6,29 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <iterator>
 using namespace std;
 
 
-struct StringPrtLess:binary_function<const string*, const string *, bool>
+struct StringPrtLess :binary_function<const string*, const string *, bool>
 {
 public:
-	bool operator()(const string *ps1, const string *ps2)const
+	bool operator()(const string *ps1, const string *ps2) const
 	{
 		return *ps1 < *ps2;
 	}
 };
 
+struct DereferenceLess //使用模板使得不限制类型
+{
+	template<class T>
+	constexpr bool operator()(const T _Left, const T _Right) const
+	{	// apply operator< to operands
+		return (*_Left < *_Right);
+	}
+};
+
+//拷贝自VS的Less定义
 template<class _Ty = void>
 struct PtrLess
 {	// functor for operator<
@@ -30,17 +41,6 @@ struct PtrLess
 		return (*_Left < *_Right);
 	}
 };
-
-
-struct DereferenceLess
-{	
-	template<class T>
-	constexpr bool operator()(const T _Left, const T _Right) const
-	{	// apply operator< to operands
-		return (*_Left < *_Right);
-	}
-};
-
 
 int main()
 {
@@ -55,7 +55,6 @@ int main()
 	};
 
 	for_each(v.begin(), v.end(), [](string *ps) {cout << *ps << endl; });//调用自己定义的比较类实现从小到大排序
-
 
 	set<string*, PtrLess<string *>> v1 = {
 		new string("aaa"),
@@ -75,8 +74,11 @@ int main()
 	//另一种方法，模板拿到了类内部，使用的时候就不需要再指定类型了
 	for_each(v2.begin(), v2.end(), [](string *ps) {cout << *ps << endl; });
 
-
-	
+	//输出的另一种方法
+	cout << endl;
+	transform(v2.begin(), v2.end(), ostream_iterator<string>(cout, "\n"), [](string *p) {return *p; });
+	//transform其实就是copy and doSomething
+	//copy(v2.begin(), v2.end(), ostream_iterator<string *>(cout, " ")); //输出的是指针的值
 
 	system("pause");
 	return 0;

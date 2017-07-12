@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	vector<bool> v = {true,false,false,false ,false,true,false,true,false };
+	vector<bool> v = {true,false,false,false ,false,true,false,true,false }; //9个，capacity,32
 	cout << sizeof(v) << endl; //虽然从size来看貌似并不是装的bit
 	cout << sizeof(bool) << endl;
 	//bool *a = &v[0]; //报错，不能编译，vector<bool>不允许使用C风格，装的是bit不是bool
