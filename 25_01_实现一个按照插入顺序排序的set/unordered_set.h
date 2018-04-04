@@ -35,7 +35,7 @@ namespace yxp_utility {
 		}
 		const T& operator[](int idx) const { return data[idx]; }
 		T& operator[](int idx) { return data[idx]; }
-		//下面接着将所有常用的方法实现即可，只改变一个insert方法
+		//下面接着将所有常用的方法实现即可，改变的其实只有一个insert方法
 	private:
 		vector<T> data;
 	};

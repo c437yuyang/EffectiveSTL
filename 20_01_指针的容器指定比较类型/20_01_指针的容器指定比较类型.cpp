@@ -10,6 +10,7 @@
 using namespace std;
 
 
+//三种方式分别是:继承自binary_function<>模板类，自己写一个比较类内涵比较的模板函数，模板类
 struct StringPrtLess :binary_function<const string*, const string *, bool>
 {
 public:

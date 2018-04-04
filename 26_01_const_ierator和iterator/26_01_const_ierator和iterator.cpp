@@ -24,7 +24,7 @@ int main()
 	typedef vector<int>::const_iterator VecConstIter;
 
 	VecConstIter cit3(v1.cbegin());
-	//VecIter it4(const_cast<VecIter>(cit3)); //VS里面，vector和string看来也不能直接去掉const
+	//VecIter it4(const_cast<VecIter>(cit3)); //VS里面，vector和string看来也不能直接去掉const,release模式也不行
 
 	//应该使用distance和advance来实现
 	DqIter it5(d1.begin()); //先指向开始

@@ -28,7 +28,7 @@ int main()
 		vec1.push_back(*it);
 	}
 
-	/*vec2.insert(vec2.begin() + 1, 1);*/ //insert是在指定位置之前插入
+	/*vec2.insert(vec2.begin() + 1, 1);*/ //insert是在指定位置插入
 
 	//auto it = vec2.erase(vec2.begin() + 1, vec2.begin() + 3); //删除vec2.begin()+1和vec2.begin()+2
 	//cout << *it << endl; //返回指向被删除的元素的下一个元素，vec2.begin()+3(删除之前)，这里就是8

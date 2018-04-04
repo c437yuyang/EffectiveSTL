@@ -35,7 +35,7 @@ int main()
 	//容器里面调用的时候，先是按照静态类型来，执行的时候，实行动态绑定
 	//所以现在容器里面装的是父类的指针，只能调父类有的方法
 
-	vec1[1]->printInfo(); //derived,虽然vec里面装的是父类指针，但是所有指针大小都一样，所以不会出现分割？
+	vec1[1]->printInfo(); //derived,虽然vec里面装的是父类指针，但是所有指针大小都一样，所以不会出现切割
 	vec1[2]->printInfo();//derived
 	cout << typeid(vec1).name() << endl;
 	cout << typeid(vec1[0]).name() << endl; //都是widget *
