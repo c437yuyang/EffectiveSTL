@@ -176,9 +176,12 @@ int main()
 
 //M28:通过reverse_iterator转换成Iterator
 // 1.reverse_iterator的insert可以直接.base来实现
-// 2.reverse_iterator.base()，返回指向其前一个元素的iterator(正序的下一个元素)
+// 2.reverse_iterator.base()，返回指向其前一个元素(逆序)的iterator(正序的下一个元素)
 // 3.插入操作就是将新元素插入到指定迭代器位置，然后将原先的迭代器指向的元素移到遍历过程的下一个
 // (这里下一个是看正序还是反序而定的)
+
+//M29:itreambuf_iterator
+// 1.istream_iterator不能读入空格这些空白字符，istreambuf_iterator可以
 
 //M30:确保容器的容量足够大小
 // 1.back_inserter等inserter的使用可以确保不会出现未定义的操作，参见30_01
@@ -195,17 +198,20 @@ int main()
 
 //M32:std:remove一定要和成员的erase联合使用
 // 1.std::remove并不删除元素，只是将不删除的元素移到开始，返回第一个需要删除的元素的iterator，因此要接erase
-// 2.list.remove是整合了erase的，可以直接用
+// 而且还不是做的元素间的交换，最终只是保证了前面部分是不需要删除的部分，后面部分可能直接是错位的(因此用了remove一定要erase)。
+// 2.list.remove是整合了erase的，可以直接用,这是STL中唯一一个叫remove并且能够删除元素的函数
+// 关联容器叫做erase
 // 3.类似的还有remove_if和unique
 
 //M33:避免在装有指针的容器使用remove类似的算法
-// 1.remove会向前移动元素，就会有覆盖，覆盖了指针的话，就会内存泄露
+// 1.remove会向前移动元素，就会有覆盖，覆盖了指针的话根本就没法delete了，就内存泄露了
 // 2.解决方法是，先用一个for_each，delete掉相应的内存，或者使用Partition
+// 其实就是正常解决方法
 // 3.如果用的是智能指针的话，就可以直接remove_erase了
 
 
 //M35:为STL库实现忽略大小写的比较
-// 
+// 参见35_01
 
 //M36:copy_if在VS里面已经实现了
 

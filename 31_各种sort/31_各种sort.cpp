@@ -24,12 +24,17 @@ int main()
 		v.push_back(rand()%20);
 	}
 
-	//partial_sort(v.begin(), v.begin() + 5, v.end(), //找出前5个，并且把前五个按顺序排列
-	//	[](const Widget& lhs, const Widget& rhs) {return lhs.age < rhs.age; });
+	partial_sort(v.begin(), v.begin() + 5, v.end(), //找出前5个，并且把前五个按顺序排列
+		[](const Widget& lhs, const Widget& rhs) {return lhs.age < rhs.age; });
 
 
 	nth_element(v.begin(), v.begin() + 5, v.end(), //只找到前5个放在前面，但是对于这五个不管顺序
 		[](const Widget& lhs, const Widget& rhs) {return lhs.age < rhs.age; });
+
+	//nth_element相当于是partial_sort减少了对前n个的排序
+	//但是nth_element和partial_sort都不是稳定的，STL没有partial_sort和nth_element的稳定版本
+
+	//nth_element还可以用来找中位值以及百分比等情况
 
 	//stable_sort(); //当两个元素相同比较的时候，保持其原来位置
 
