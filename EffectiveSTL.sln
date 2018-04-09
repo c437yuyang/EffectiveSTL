@@ -49,6 +49,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_01_STL容器线程安全
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "23_01_有序vector代替map", "23_01_有序vector代替map\23_01_有序vector代替map.vcxproj", "{12750CD1-C42F-4237-9CF2-EE23A641005E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "40_01_仿函数类可适配", "40_01_仿函数类可适配\40_01_仿函数类可适配.vcxproj", "{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "42_01_新建比较器避免修改less默认行为", "42_01_新建比较器避免修改less默认行为\42_01_新建比较器避免修改less默认行为.vcxproj", "{D827C061-D627-49C4-9A9F-AE3311D78DFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +245,22 @@ Global
 		{12750CD1-C42F-4237-9CF2-EE23A641005E}.Release|x64.Build.0 = Release|x64
 		{12750CD1-C42F-4237-9CF2-EE23A641005E}.Release|x86.ActiveCfg = Release|Win32
 		{12750CD1-C42F-4237-9CF2-EE23A641005E}.Release|x86.Build.0 = Release|Win32
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Debug|x64.ActiveCfg = Debug|x64
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Debug|x64.Build.0 = Debug|x64
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Debug|x86.ActiveCfg = Debug|Win32
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Debug|x86.Build.0 = Debug|Win32
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Release|x64.ActiveCfg = Release|x64
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Release|x64.Build.0 = Release|x64
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Release|x86.ActiveCfg = Release|Win32
+		{A218E6A3-3B7F-4E56-A1DC-9BD87DECA0BD}.Release|x86.Build.0 = Release|Win32
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Debug|x64.ActiveCfg = Debug|x64
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Debug|x64.Build.0 = Debug|x64
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Debug|x86.ActiveCfg = Debug|Win32
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Debug|x86.Build.0 = Debug|Win32
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Release|x64.ActiveCfg = Release|x64
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Release|x64.Build.0 = Release|x64
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Release|x86.ActiveCfg = Release|Win32
+		{D827C061-D627-49C4-9A9F-AE3311D78DFF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
